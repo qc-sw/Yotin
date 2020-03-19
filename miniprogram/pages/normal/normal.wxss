@@ -1,0 +1,40 @@
+/* pages/normal/normal.wxss */
+.modal_titletext{
+  color: black
+}
+.input_explaintext{
+  height:300rpx 
+  
+}
+.choiceButton{
+  width: 80%;
+  font-size:30rpx
+}
+.center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.startRecord {
+  width: 150px;
+  height: 150px;
+}
+
+.clock {
+  margin-top: 100px;
+  font-size: 60px;
+  font-weight: 100;
+}
+.btn{
+  width:42%;
+  margin-top:30px;
+  padding-bottom:5px;
+  padding:8px;
+  background:transparent;
+  border-radius:100px;
+}
+.btn::after{
+  border-radius: 100px;
+}

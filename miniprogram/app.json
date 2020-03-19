@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/setting/setting",
+    "pages/normal/normal",
+    "pages/demo/demo",
+    "pages/time/time",
+    "pages/record-demo/record",
+    "pages/record/record",
+    "pages/records/records",
+    "pages/intro/intro"
+  ],
+  "window": {
+    "backgroundColor": "#FFF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "YoTin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/homeHL.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/record-demo/record",
+        "iconPath": "image/record.png",
+        "selectedIconPath": "image/recordHL.png",
+        "text": "录音"
+      },
+      {
+        "pagePath": "pages/records/records",
+        "iconPath": "image/files.png",
+        "selectedIconPath": "image/filesHL.png",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/intro/intro",
+        "iconPath": "image/intro.png",
+        "selectedIconPath": "image/introHL.png",
+        "text": "关于"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

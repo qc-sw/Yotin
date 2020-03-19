@@ -1,0 +1,74 @@
+<modal wx:if="{{ShowModal_newRecord}}" title="新录音" confirm-text="确定" cancel-text="取消" bindcancel="closeModal_newRecord" bindconfirm="confirm_newRecord">  
+
+    <text class=' modal_titletext'>标题:</text>
+    <input  placeholder="未命名录音" bindinput='getinput_title' />  
+    
+    <!-- 下拉菜单 -->
+    <text class='modal_titletext' >分组:</text>
+    <button class='choiceButton' data-type="normal" catchtap='choicingType'>{{choicedType}}</button>
+
+    <text class='modal_titletext'>备注:</text>
+    <textarea style="width:90%" class='input_explaintext' placeholder="请输入详细的文字说明" bindinput='getinput_explain'/> 
+
+</modal>
+
+<view class="container timer {{isRuning ? 'timer--runing': ''}}">
+	<view class="timer_main">
+		 <view class="timer_time-wrap" bindtap="toggleDialog">
+		 		<view class="timer_progress_mask" ></view>
+		 		<view class="timer_progress timer_left">
+		 			<view class="timer_circle timer_circle--left" style="transform: rotate({{leftDeg}}deg);"></view>
+		 		</view>
+		 		<view class="timer_progress timer_right">
+		 			<view class="timer_circle timer_circle--right" style="transform: rotate({{rightDeg}}deg);"></view>
+		 		</view>
+			 	<text wx:if="{{!completed}}" class="timer_time">{{remainTimeText}}</text>
+			 	<text 
+			 		wx:if="{{isRuning}}" 
+			 		animation="{{nameAnimation}}" 
+			 		class="timer_taskName">{{taskName}}{{completed ? '已完成！' : '中'}}</text>
+		 		<image 
+		 			wx:if="{{completed}}" 
+		 			class="timer_done" 
+		 			src="../../image/complete.png"></image>
+		 </view>
+		 <input 
+		 	type="text" 
+		 	placeholder-style="text-align:center" 
+		 	class="timer_inputname" 
+		 	bindinput="changeLogName"
+		 	placeholder="点击上方设置最大时长"
+       disabled/>
+	</view>
+  
+	<view class="timer_footer">
+	  <view 
+	  	bindtap="startTimer" 
+	  	data-type="work" 
+	  	class="timer_ctrl {{isRuning && timerType == 'rest' ? 'hide' : ''}}" >{{isRuning ? '完成': '录音'}}</view>
+	</view>
+</view>
+<modal class="modal" hidden="{{hidden}}" title="最大时长(分钟)" confirm-text="确定" bindcancel="cancel" bindconfirm="confirm" no-cancel="true">
+
+    <view class="zan-dialog}">
+  <view class="zan-dialog__mask"/>
+  <view class="zan-dialog__container">
+    <view>
+    <view class="section panel">
+      <view class="section_body">
+        <slider 
+          bindchange="changeWorkTime" 
+          bindchanging="changingWorkTime"
+          show-value="true" 
+          min="1"
+          max="10"
+          step="1"
+          value="{{workTime}}"
+          left-icon="cancel" 
+          right-icon="success_no_circle"/>
+	  </view>
+	</view>
+    </view>
+  </view>
+</view>
+</modal>

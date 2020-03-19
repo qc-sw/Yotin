@@ -1,0 +1,29 @@
+<!--pages/records/records.wxml-->
+<view>
+  <view class='title'>一个简单的录音</view>
+  <button bindtap='startRecord'>录音</button>
+  <button bindtap='stopRecord'>停止</button>
+  <button bindtap='uploadFile'>上传 </button>
+  <text>点击相应表项下载</text>
+
+  
+</view>
+<view>
+  <view style='border-bottom:1px solid gray'>
+    我的云文件列表：
+  </view>
+  <view wx:for="{{UsersRecords}}" wx:key="{{item._id}}" class='listitem' bindtap='playclouldFlie' data-index="{{index}}">
+    <view>
+      name:{{item.name}}
+    </view>
+    <view>
+      _id:{{item._id}}
+    </view>
+    <view>
+      cloudID:{{item.cloudID}}
+    </view>
+    <view>
+      CreatTime:{{item.CreatTime}}    
+    </view>
+  </view>
+</view>

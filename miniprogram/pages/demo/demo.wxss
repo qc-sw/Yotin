@@ -1,0 +1,10 @@
+/* pages/records/records.wxss */
+
+.title{
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px
+}
+.listitem{
+  margin: 20px;
+  padding: 15px;
+}

@@ -1,0 +1,6 @@
+/* pages/record/record.wxss */
+.btn{
+  width:70%;
+  padding:6px;
+  font-size:18px;
+}

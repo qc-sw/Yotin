@@ -1,0 +1,39 @@
+<!--miniprogram/pages/intro/intro.wxml-->
+<view class="allpage">
+  <view class="full">
+    <image class='background' src="../../image/蓝纱.jpg" mode="aspectFill"></image>
+    <view class="tab">
+      <view class='box-l'></view>
+      <view class='box-r'></view>
+      <text class="yotin">关于YOTIN</text>
+    </view>
+    <view class="layout">
+      <view class="transparent">
+        <view class="head" style="text-align:center">- 功能介绍 -</view>
+        <view>1、可限制录音的长度</view>
+        <view>2、可对录音进行编辑</view>
+        <view>3、可分标签管理录音</view>
+        <view>4、支持录音分享</view>
+      </view>
+      <view class="transparent">
+        <view class="head">- 待开发功能 -</view>
+        <view>1、可对录音进行文字说明</view>
+        <view>2、可将录音转文字</view>
+        <view>3、可对录音按日期搜索</view>
+        <view>4、可对录音按标题搜索</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="bottom">
+    <view class="code">
+      <image class="codeImg" mode="aspectFit" show-menu-by-longpress="true" src="../../image/code.jpg"></image>
+      <text class="us">关注我们</text>
+    </view>
+    <view class="contact">
+      <text class="tel">咨询电话：000-000000000</text>
+      <text class="adress">福建省福州市福州大学</text>
+    </view>
+  </view>
+</view>

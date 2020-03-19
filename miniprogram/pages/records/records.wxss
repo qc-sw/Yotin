@@ -1,0 +1,233 @@
+/* pages/records/records.wxss */
+
+
+/* 这是最外面的容器，设定它采用flex的默认设置 */
+
+.background {
+  background-image: linear-gradient(45deg, #7a88ff, #7affaf);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.records {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+/* 一条记录：记录之间相互有间隔；一条记录分为两部分，mainprt、addpart，它们横向排列。mainpart有两个部分。*/
+
+.record {
+  display: flex;
+  width: 100%;
+  flex-direction: raw;
+  margin: 4px 0;
+  overflow: hidden;
+}
+
+/* 点击之后mainpart 略变透明 */
+
+.record_show .record_mainpart {
+  opacity: 0.8;
+}
+
+/* 暗色作背景、圆角 */
+
+.record_mainpart {
+  flex-shrink: 0;
+  width: 100%;
+  /* border-radius:3px; */
+  overflow: hidden;
+  transform: translateX(250rpx);
+  margin-left: -250rpx;
+  transition: all 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+.record_addpart {
+  height: 130rpx;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  transform: translateX(250rpx);
+  transition: all 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+.text_recordname {
+  margin-left: 30rpx; /* 让它跟左边的icon有一点间隔 */
+  color: rgba(5, 5, 5, 0.911);
+  /* 标题太长的处理 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.record_resident {
+  width: 100%;
+  flex-shrink: 0;
+  height: 130rpx;
+  background-color: #e8e9e9;
+  display: flex;
+  padding-left: 20px;
+  align-items: center; /* 设置icon和recordname的行内对其方式是center */
+}
+
+.record_icon {
+  flex-shrink: 0;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.hideR_del {
+  background-color: #ff4e3d;
+  width: 125rpx;
+  height: 100%;
+  /* "删除"字样的设置 */
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 0; /* 去除button 的默认圆角 */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.hideR_share {
+  /* background-image: linear-gradient(45deg, #7A88FF, #7AFFAF); *//* background-image: linear-gradient(to right, #999, orangered); */
+  background-color: #ffa039;
+  width: 125rpx;
+  height: 100%;
+  /* "分享"字样的设置 */
+  font-size: 30rpx;
+  border-radius: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.touch_move_active .record_mainpart, .touch_move_active .record_addpart {
+  transform: translateX(0);
+}
+
+.hidePlayer {
+  display: flex;
+  flex-wrap: warp;
+  flex-direction: column;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+}
+
+.hidePlayer_show {
+  height: auto;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.ControlToggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.ControlToggle_PP {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.ControlToggle_BF {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.HP_sldier {
+  flex-shrink: 0;
+  width: 90%;
+}
+
+/* Taotab */
+
+.Taptab {
+  display: flex;
+  flex-direction: row;
+  line-height: 80rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.button_addTab {
+  height: 45rpx;
+  width: 45rpx;
+  flex-shrink: 0;
+  margin: 10rpx;
+}
+
+.Taptab_List {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+}
+
+.scrollview {
+  height: auto;
+}
+
+.scrollview view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.Taptab_ListItem {
+  flex-shrink: 0;
+  font-size: 30rpx;
+  color: #777;
+  margin: 0rpx 10rpx;
+}
+
+.Taptab_ListItem_active {
+  color: #da7c0c;
+  border-bottom: 5rpx solid #da7c0c;
+}
+
+.RecordsList {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.RecordsList_show {
+  display: block;
+}
+
+button {
+  border: none;
+}
+
+border::after {
+  border: none;
+}
+input {
+  outline: none;
+  border: none;
+  list-style: none;
+}

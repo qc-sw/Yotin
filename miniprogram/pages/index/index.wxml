@@ -1,0 +1,10 @@
+<!--pages/record.wxml-->
+<view class="full">
+  <image class='background' src="../../image/bg.jpg" mode="aspectFill"></image>
+  <view style="height:30%"></view>
+  <view class="layout">
+    <view class="transparent" bindtap="goRecord">- 马上录音 -</view>
+    <view class="transparent" bindtap="goFile">- 我的录音 -</view>
+    <view class="transparent" bindtap="goAbout">- 关于优听 -</view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/record-demo/record.wxml-->
+
+
+<view class="fullbg">
+  <image class='background' src="../../image/bg.jpg" mode="aspectFill"></image>
+ <view class="full">
+  <swiper class="card" indicator-dots='true' circular='true' autoplay='true'>
+    <swiper-item id="normalCard"  class="normal" bindtap="touchNormal" style="width:{{nwidth}}">
+      <image style="width:100%;height:100%;" mode='aspectFill' src="../../image/normalBg.jpg"></image>
+      <view class="timeWord">开始录音</view>
+    </swiper-item>
+    <swiper-item  id="timeCard" class="time" bindtap="touchTime" style="width:{{twidth}}">
+    <image style="width:100%;height:100%;"  src="../../image/timg1.gif"></image>
+    <view class="timeWord">计时模式</view>
+    
+    </swiper-item>
+  </swiper>
+</view>
+  
+</view>

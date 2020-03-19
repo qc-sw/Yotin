@@ -1,0 +1,22 @@
+<!--pages/normal/normal.wxml-->
+<modal wx:if="{{ShowModal_newRecord}}" title="新录音" confirm-text="确定" cancel-text="取消" bindcancel="closeModal_newRecord" bindconfirm="confirm_newRecord">  
+
+    <text class=' modal_titletext'>标题:</text>
+    <input placeholder="未命名录音" bindinput='getinput_title' />  
+    
+    <!-- 下拉菜单 -->
+    <text class='modal_titletext'>分组:</text>
+    <button class='choiceButton' catchtap='choicingType'>{{choicedType}}</button>
+
+    <text class='modal_titletext'>备注:</text>
+    <input class='input_explaintext' placeholder="请输入详细的文字说明" bindinput='getinput_explain' /> 
+
+</modal>
+
+<view class="center">
+  <view class="clock">{{min>=10 ? min:'0'+min}}:{{num%60>=10 ?num%60:'0'+num%60}}</view>
+  <view wx:if="{{show1}}"><image class="startRecord" mode="center" src='../../image/录音.svg' bindtap='startRecording'></image></view>
+  <view wx:if="{{!show1}}"><image class="startRecord" mode="center" src="../../image/停止.svg" bindtap='stopRecording'></image></view>
+  <view>保持屏幕长亮，最长录制10分钟</view>
+  <button class="btn" bindtap='playrecord'>点我试听</button>
+</view>

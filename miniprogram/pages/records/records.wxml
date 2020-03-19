@@ -1,0 +1,63 @@
+<modal wx:if="{{ShowInputmodal}}" title="输入新的类别名" confirm-text="确定" cancel-text="取消" bindcancel="Inputmodal_Cancel" bindconfirm="">  
+
+<!-- createNewTab -->
+    <input type='text'placeholder="请输入内容" bindinput='getinput' focus/>  
+</modal>
+
+<view class="bg">
+<!-- <view class='background' ></view> -->
+
+  <view class='Taptab'>
+    <!-- type列表 -->
+  <scroll-view scroll-x class='scrollview'>
+  
+  <view class="">
+    <view class="Taptab_List" >  
+        <view bindtap="ChangeTaptab" wx:for="{{tabContent}}" wx:key="{{index}}" class="Taptab_ListItem {{currentTaptab == index?'Taptab_ListItem_active':''}}" data-current='{{index}}' data-type="{{item}}" >
+          {{item}}
+        </view>  
+    </view>
+
+    <!-- 最右边的加号 -->
+    <image mode="aspectFit" class='button_addTab' src='../../image/addTab.png' bindtap='ShowInputmodal'></image>
+  </view>
+    
+
+  </scroll-view>
+</view>  
+
+<!-- 列表 -->
+<view class="records " wx:for="{{UsersRecords}}" wx:key="{{index}}">
+  <!-- 一条录音记录 -->
+  <view wx:if="{{!item.isHide}}" class="record   {{item.isTouchMove ? 'touch_move_active' : ''}} {{item.isTap ? 'record_show' : ''}}" data-index="{{index}}">
+    <view class="record_mainpart" >
+      <!-- 常显示的部分 -->
+      <view class="record_resident " data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove"  catchtap='changeisTap'>
+        <image class='record_icon' src="../../image/icon_music.png"></image>
+        <text class='text_recordname'>{{item.name}}</text>
+      </view>
+      <!-- 下面隐藏的部分 -->
+      <view class="hidePlayer {{item.isTap ? 'hidePlayer_show' : ''}}" >
+        <slider max="{{duration}}" block-size="16" value="{{currentTime}}" catchchange='ChangCurrentTime' step="{{0.5}}" class='HP_sldier'></slider>
+        <view class='ControlToggle'>
+          <image src="../../image/moveback.png" class='ControlToggle_BF' catchtap='moveback' data-index="{{index}}"></image>
+
+          <image wx:if="{{!item.isPlay}}" src="../../image/play.png" class='ControlToggle_PP' catchtap='playVoice' data-index="{{index}}"></image>
+          <image wx:else src="../../image/pause.png" class='ControlToggle_PP' catchtap='pauseVoice' data-index="{{index}}"></image>
+          <image src="../../image/moveforward.png" class='ControlToggle_BF' catchtap='moveforward' data-index="{{index}}"></image>
+        </view>
+      </view>  
+    </view>
+    <!-- 右边隐藏的部分 结构上是作为附加的成分-->
+    <view class="record_addpart">
+        <button class="hideR_share" open-type="share" data-index="{{index}}">分享</button>
+        <button class="hideR_del" data-index="{{index}}" catchtap='deletFile'>删除</button>
+    </view>
+  </view>
+</view>  
+</view>
+
+<!-- <button bindtap='tem1'>临时按钮1：创建TabContent记录</button> -->
+      
+
+
